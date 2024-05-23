@@ -27,7 +27,7 @@ Follow these steps to install and run the Flask Port Scanner on your local machi
 1. **Clone the repository**
 
     ```sh
-    git clone https://github.com/yourusername/flask-portscanner.git
+    git clone https://github.com/havasgaard/flask_portscanner.git
     cd flask-portscanner
     ```
 
@@ -60,12 +60,12 @@ Follow these steps to install and run the Flask Port Scanner on your local machi
 5. **Run the application**
 
     ```sh
-    flask run --host=0.0.0.0 --port=3001
+    flask run --host=0.0.0.0 --port=5000 # Change the port if needed.
     ```
 
 6. **Access the application**
 
-    Open your web browser and go to `http://127.0.0.1:3001`.
+    Open your web browser and go to `http://127.0.0.1:5000`.
 
 ## Usage
 
