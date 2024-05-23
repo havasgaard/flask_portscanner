@@ -28,7 +28,7 @@ Follow these steps to install and run the Flask Port Scanner on your local machi
 
     ```sh
     git clone https://github.com/havasgaard/flask_portscanner.git
-    cd flask-portscanner
+    cd flask_portscanner
     ```
 
 2. **Create a virtual environment**
