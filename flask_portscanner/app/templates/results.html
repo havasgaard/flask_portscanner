@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Scan Results{% endblock %}
+
+{% block content %}
+    <h1>Scan Results</h1>
+    <ul class="port-list">
+        {% for port, data in results.items() %}
+            <li>
+                <div class="port-header">
+                    <strong>Port {{ port }} ({{ data.name }}):</strong> {{ data.status }}
+                </div>
+                <div class="port-details">
+                    <p><strong>Description:</strong> {{ data.description }}</p>
+                    {% if data.status == "Open" %}
+                        <p><strong>Potential Vulnerabilities:</strong></p>
+                        <ul>
+                            {% for vulnerability in data.vulnerabilities %}
+                                <li>{{ vulnerability }}</li>
+                            {% endfor %}
+                        </ul>
+                        <p><strong>Quick Fixes:</strong></p>
+                        <ul>
+                            {% set os_type = get_os() %}
+                            {% for fix in data.fixes[os_type] %}
+                                <li>{{ fix|replace('\n', '<br>')|safe }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}
